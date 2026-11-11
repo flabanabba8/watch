@@ -1,0 +1,9 @@
+{
+  "engine": "https://github.com/DemonKingSwarn/luffy",
+  "revision": "0e0abc6bb1c10a02c2d0db2711a04ca9bb836deb",
+  "bridge": "AniDroid JSON bridge source in native/",
+  "fallback_origin": "https://github.com/MADPANDA3D/pandaflix",
+  "fallback_revision": "f6484787ba5a",
+  "changes": "Source-only JSON bridge and Cinejoy/VixSrc/LookMovie overlay retained from AniDroid. No compiled binaries shipped; no upstream integrity checks removed.",
+  "playback_origin": "Watch Anime sibling plugin; independent copy of the local progress and mpv supervision implementation. No runtime dependency on Watch Anime."
+}

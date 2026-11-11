@@ -1,0 +1,28 @@
+name: watch
+version: "0.1.0"
+description: "Ask Hermes for an anime, a film or a TV series and it streams it on demand in local mpv, with nothing to download first, then resumes where you stopped."
+author: "Watch contributors"
+license: GPL-3.0-only
+requires_hermes: ">=0.22.0"
+provides_tools:
+  - anime_search
+  - anime_episodes
+  - anime_play
+  - anime_status
+  - anime_control
+  - anime_history
+  - anime_resume
+  - movies_search
+  - movies_details
+  - movies_play
+  - movies_status
+  - movies_control
+  - movies_history
+  - movies_resume
+config_schema:
+  tmdb_api_key: {type: secret, env: TMDB_API_KEY, required: false, label: "TMDB API v3 key (movies and TV)", description: "Optional only for a bridge built with Luffy's built-in metadata key. A bridge built without that key requires your TMDB API v3 key here. If set, your key overrides the built-in one; stored by Hermes and sent only to TMDB. Not used by the anime part."}
+  bridge_sha256: {type: str, default: "", description: "Movies and TV: SHA-256 printed by the trusted bridge build; required before sending the TMDB key."}
+  bridge_path:
+    type: str
+    default: "ani-luffy-bridge"
+    description: "Movies and TV: executable path for the user-built Luffy JSON bridge. See movies/native/build-bridge.sh."

@@ -1,0 +1,180 @@
+{
+  "status": "actual registered source schemas; no handlers executed",
+  "tools": [
+    {
+      "name": "movies_search",
+      "description": "Search movie and TV titles through the installed Luffy bridge using your Hermes-managed TMDB API v3 key. Show title/year/kind and select the exact ID; never silently choose a remake or a different series.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 500
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "all",
+              "movie",
+              "tv"
+            ]
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "movies_details",
+      "description": "Show a selected title and season/episode metadata using your Hermes-managed TMDB API v3 key when refresh is needed. Metadata does not prove stream availability. Cached for 24 hours unless refresh is requested.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "Exact movie-N or tv-N ID selected from movies_search."
+          },
+          "season": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "refresh": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "identifier"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "movies_play",
+      "description": "Play the selected movie or TV episode in local mpv on the Hermes host. Only use when the user requests playback; this opens a window and plays sound. Movies use season0/episode0. TV requires explicit season and episode. Preserves HLS master playlists and source headers. Linux development build.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "Exact movie-N or tv-N ID selected from movies_search."
+          },
+          "season": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "episode": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "auto",
+              "cinejoy",
+              "vixsrc",
+              "lookmovie"
+            ]
+          },
+          "resume": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "identifier"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "movies_status",
+      "description": "Read actual plugin-owned player status and observed progress.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "description": "Playback session returned by movies_play/movies_resume."
+          }
+        },
+        "required": [
+          "session_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "movies_control",
+      "description": "Pause, unpause, seek or stop only this plugin's own player session.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "description": "Playback session returned by movies_play/movies_resume."
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "pause",
+              "unpause",
+              "seek",
+              "stop"
+            ]
+          },
+          "seconds": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 28800
+          }
+        },
+        "required": [
+          "session_id",
+          "action"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "movies_history",
+      "description": "Show this profile's local movie/TV viewing history, with source and saved positions.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "movies_resume",
+      "description": "Continue a requested movie/TV session from observed progress using fresh links. An optional source change preserves the position. Advances TV after natural completion; completed movies require an explicit replay.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "Exact movie-N or tv-N ID selected from movies_search."
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "auto",
+              "cinejoy",
+              "vixsrc",
+              "lookmovie"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      }
+    }
+  ]
+}

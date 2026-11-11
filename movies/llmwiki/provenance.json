@@ -1,0 +1,110 @@
+{
+  "curated": "2026-11-09",
+  "status": "source-derived, not a new live verification",
+  "sources": [
+    {
+      "package_path": "README.md",
+      "sha256": "0c5c115f9d2908f4775a245011e59b838763cb6b39682965f71f5d3a3fa4ac3d"
+    },
+    {
+      "package_path": "VERIFICATION.md",
+      "sha256": "3e5eb0d326bb8cd9da12cfcee381f2a7987f9a2e0ca56748b5b01eaff785d432"
+    },
+    {
+      "package_path": "__init__.py",
+      "sha256": "a6d02bfd3d28867750f4bed27ed9f434db304790fa141999adff6ae43e614832"
+    },
+    {
+      "package_path": "bridge_exec.py",
+      "sha256": "6144b50891ee59984286791c55c409e5bd044ded7049698d956f0e9f9169688a"
+    },
+    {
+      "package_path": "dashboard/plugin_api.py",
+      "sha256": "74a878965deca79df4e0782203afd2d763e37b4dfb0a66099bca88a8c0bafefd"
+    },
+    {
+      "package_path": "library.py",
+      "sha256": "87f8fde64aa3e0c54b754eddd361578130f6785459fbd9be460012ab3e86f3de"
+    },
+    {
+      "package_path": "native/make-key-overridable.py",
+      "sha256": "b245998d3b5ad0fa4b63e758444655fac926e1d6688794e5b0f59adc9ccb09b7"
+    },
+    {
+      "package_path": "net.py",
+      "sha256": "3fc1252f696ddc33419a925b80a4b453019b8dbfab51e18f9bc8951f9bc1339d"
+    },
+    {
+      "package_path": "player.py",
+      "sha256": "31a3132a8c5d21572a0c91e3e32b9d19487d0ae95b4a996f0e15600f09fa5a90"
+    },
+    {
+      "package_path": "plugin.yaml",
+      "sha256": "4aaa259330602398ee36760ba619b7736cca10f2a7033a724b446fbc951e9b90"
+    },
+    {
+      "package_path": "process_env.py",
+      "sha256": "f8fcf92fbb4cd83ebaaa89b42b240709a0619d4f380cce82dd4f8ff42bcdfafa"
+    },
+    {
+      "package_path": "provider.py",
+      "sha256": "7f4a6c5d8a924d3de59b205bf45dae5d617c0a208c6277f9c550e511196f5a84"
+    },
+    {
+      "package_path": "tests/test_dashboard.py",
+      "sha256": "916d33dbc6ba31ca60759c687c1526ec7430219793acfe85dc507616ac82f64f"
+    },
+    {
+      "package_path": "tests/test_hls_playback.py",
+      "sha256": "554600c884c9e0171a89baf99eb9b732c18925a21391485f13097fd1ae49c131"
+    },
+    {
+      "package_path": "tests/test_key_overridable.py",
+      "sha256": "8c9cf369084713fa3546f59edbd3bbf549e47bd9508aae6e9546b1a9d36cf446"
+    },
+    {
+      "package_path": "tests/test_movies.py",
+      "sha256": "f23aeee88b0ae2d26596bb59d11dda8bc19d104e31b33999b7253fccce3109af"
+    },
+    {
+      "package_path": "tests/test_provider_credentials.py",
+      "sha256": "ac63fa1f565a1f791c5ec2ef2018a1df3fbe0e8230493f72e0707c63c326029d"
+    },
+    {
+      "package_path": "worker.py",
+      "sha256": "400ecac41805193db5eccce043075cc0a17c174ab60aeba1cab82b106dc9bd7f"
+    }
+  ],
+  "credentials_or_private_installations_read": false,
+  "quality_review": {
+    "date": "2026-11-09",
+    "method": "main-session source review; schema registration only, no business handlers or new live tests",
+    "references": [
+      {
+        "package_path": "README.md",
+        "sha256": "0c5c115f9d2908f4775a245011e59b838763cb6b39682965f71f5d3a3fa4ac3d"
+      },
+      {
+        "package_path": "plugin.yaml",
+        "sha256": "4aaa259330602398ee36760ba619b7736cca10f2a7033a724b446fbc951e9b90"
+      },
+      {
+        "package_path": "llmwiki/task-guide.md",
+        "sha256": "01380d2f8482fdb2ad593d42e975f4e45e32b4ddd46b459327babca3566ed60a"
+      },
+      {
+        "package_path": "llmwiki/contracts.json",
+        "sha256": "de675b4e1939ac696bd2ba06163ab0532d2988d7a71e1b575baac7a9895f98a0"
+      }
+    ],
+    "scope": [
+      "setup decisions",
+      "worked task flow",
+      "failure diagnosis",
+      "acceptance limits",
+      "actual tool schema alignment",
+      "startup discovery",
+      "local reference resolution"
+    ]
+  }
+}

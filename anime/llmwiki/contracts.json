@@ -1,0 +1,168 @@
+{
+  "status": "actual registered source schemas; no handlers executed",
+  "tools": [
+    {
+      "name": "anime_search",
+      "description": "Search anime titles through the pinned ani-cli provider. Show the actual matching titles and let the user select ambiguous seasons before playback.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "anime_episodes",
+      "description": "List currently available episode numbers for a previously selected anime title.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "Exact title/season ID returned by anime_search."
+          }
+        },
+        "required": [
+          "identifier"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "anime_play",
+      "description": "Open one episode in local mpv on the Hermes host. Only use when the user asks to play; this opens a window and plays audio. Resolves a fresh stream and resumes five seconds before saved progress by default. Linux only in this version.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "Exact title/season ID returned by anime_search."
+          },
+          "episode": {
+            "type": "string",
+            "description": "Episode number as returned by anime_episodes."
+          },
+          "audio": {
+            "type": "string",
+            "enum": [
+              "sub",
+              "dub"
+            ]
+          },
+          "quality": {
+            "type": "string",
+            "enum": [
+              "best",
+              "worst",
+              "360",
+              "480",
+              "720",
+              "1080"
+            ]
+          },
+          "resume": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "identifier",
+          "episode"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "anime_status",
+      "description": "Report actual mpv playback state and saved position; a launched process is not yet confirmed playback.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "description": "Playback session ID returned by anime_play or anime_resume."
+          }
+        },
+        "required": [
+          "session_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "anime_control",
+      "description": "Pause, unpause, seek or stop ONLY a player session launched by this plugin.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "description": "Playback session ID returned by anime_play or anime_resume."
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "pause",
+              "unpause",
+              "seek",
+              "stop"
+            ]
+          },
+          "seconds": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 28800
+          }
+        },
+        "required": [
+          "session_id",
+          "action"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "anime_history",
+      "description": "List this Hermes profile's observed anime playback progress. Does not read ani-cli or another player's history.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "anime_resume",
+      "description": "Continue watching on the Hermes host in local mpv, resolving fresh media links. Advances to the next episode only after a recorded natural completion; otherwise resumes five seconds before the saved position. Only use when the user asks to continue playback.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "Exact title/season ID returned by anime_search."
+          },
+          "quality": {
+            "type": "string",
+            "enum": [
+              "best",
+              "worst",
+              "360",
+              "480",
+              "720",
+              "1080"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      }
+    }
+  ]
+}

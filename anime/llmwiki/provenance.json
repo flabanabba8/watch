@@ -1,0 +1,94 @@
+{
+  "curated": "2026-11-09",
+  "status": "source-derived, not a new live verification",
+  "sources": [
+    {
+      "package_path": "README.md",
+      "sha256": "ba4de7e5a8a055e7e6a69bb8fb6cd0eeac17ad575bb67ae3b9ca6b6a39ea5a58"
+    },
+    {
+      "package_path": "VERIFICATION.md",
+      "sha256": "168b67d8ed2228157d15f2dc8a1f8c98c5fa7d2f768c03c8c7dae99ef4e3cfd9"
+    },
+    {
+      "package_path": "__init__.py",
+      "sha256": "d2e5fd10f6401db4ab98bc95998c27267e736a99b1d0aff882cadefda6e620ca"
+    },
+    {
+      "package_path": "dashboard/plugin_api.py",
+      "sha256": "3a20d22380360bcaede1b0aafbab681eff7f2ca2c4cc4ecc23261a2dc20817a2"
+    },
+    {
+      "package_path": "library.py",
+      "sha256": "f6b7cb36b03c3218f806e6f9fe46f8f3e9b70e1a7914c19086250793aadcf23c"
+    },
+    {
+      "package_path": "net.py",
+      "sha256": "657b6442e277a39f4e15221ab9f58d13c4e212e05fbda0ac7ffc17d2ee914bb9"
+    },
+    {
+      "package_path": "player.py",
+      "sha256": "39034b1529287baa3778f8334ce022ba9128eaebea21ce7133d4d791aebc572b"
+    },
+    {
+      "package_path": "plugin.yaml",
+      "sha256": "91b4bc9d2d704c3e58db528f0c808ff56fbe09d2a239eb0420e880bc12b9c36b"
+    },
+    {
+      "package_path": "process_env.py",
+      "sha256": "f8fcf92fbb4cd83ebaaa89b42b240709a0619d4f380cce82dd4f8ff42bcdfafa"
+    },
+    {
+      "package_path": "provider.py",
+      "sha256": "ff8b0b1ab2e21bab3cf9c44471ef661e302ff94a695a93c42391329d31242913"
+    },
+    {
+      "package_path": "tests/test_dashboard.py",
+      "sha256": "aa2a63ae4a92bcddc781abe04c02b8be4767abefaf451642977b127bb3885358"
+    },
+    {
+      "package_path": "tests/test_playback.py",
+      "sha256": "5d7a6521d974987c7a5c4a6c702df1fed89b073f5d8fed1b42510cdb20c73b88"
+    },
+    {
+      "package_path": "tests/test_watch_anime.py",
+      "sha256": "e13a1f4589ed6f1bccccde1a14bb49f197e658848877662deb414d9e69df5c3e"
+    },
+    {
+      "package_path": "worker.py",
+      "sha256": "daff0e6327e46df45e9120a4383dd5d6f630de9190a588b772ae911180268fdf"
+    }
+  ],
+  "credentials_or_private_installations_read": false,
+  "quality_review": {
+    "date": "2026-11-09",
+    "method": "main-session source review; schema registration only, no business handlers or new live tests",
+    "references": [
+      {
+        "package_path": "README.md",
+        "sha256": "ba4de7e5a8a055e7e6a69bb8fb6cd0eeac17ad575bb67ae3b9ca6b6a39ea5a58"
+      },
+      {
+        "package_path": "plugin.yaml",
+        "sha256": "91b4bc9d2d704c3e58db528f0c808ff56fbe09d2a239eb0420e880bc12b9c36b"
+      },
+      {
+        "package_path": "llmwiki/task-guide.md",
+        "sha256": "c95a74cd892fde6bae25cf1ce5ba6bc9efc66bb34e4d5b47eb3508bea1ff411f"
+      },
+      {
+        "package_path": "llmwiki/contracts.json",
+        "sha256": "4b1dcb63d6b7a3f7d81de6c333a8e8ce8b8e9f102032ea4412017a57f2a9f533"
+      }
+    ],
+    "scope": [
+      "setup decisions",
+      "worked task flow",
+      "failure diagnosis",
+      "acceptance limits",
+      "actual tool schema alignment",
+      "startup discovery",
+      "local reference resolution"
+    ]
+  }
+}
