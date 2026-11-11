@@ -1,5 +1,7 @@
 # Watch
 
+![Watch](assets/thumbnail.jpg)
+
 Ask Hermes for a show or a film and it streams it on demand, with nothing to download first, and remembers where you stopped. Anime, movies and TV series.
 
 **Who it is for:** someone who runs Hermes on a Linux computer with mpv and wants to say "play the next episode" or "continue my film" instead of hunting for links.
